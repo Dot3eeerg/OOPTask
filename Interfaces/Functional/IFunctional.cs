@@ -2,7 +2,7 @@
 
 namespace Interfaces.Functional;
 
-public interface IFunctional<TFunction>
+public interface IFunctional<TFunction> where TFunction : IFunction
 {
-    double Value(IFunction function);
+    double Value(TFunction function);
 }
