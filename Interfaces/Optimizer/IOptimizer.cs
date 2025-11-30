@@ -8,8 +8,9 @@ public interface IOptimizer<TFunctional, TFunction>
     where TFunctional : IFunctional<TFunction>
     where TFunction : IFunction
 {
-    IVector Mininize(TFunctional functional,
+    IVector Minimize(TFunctional functional,
         IParametricFunction<TFunction> function,
-        IVector? minimumParameter = default,
-        IVector? maximumParameter = default);
+        IVector initialParameters,
+        IVector? minimumParameter = null,
+        IVector? maximumParameter = null);
 }
