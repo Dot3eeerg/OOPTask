@@ -4,10 +4,16 @@ using Interfaces.Functional;
 
 namespace Functionals;
 
-sealed class L1Functional : IDifferentiableFunctional
+public class L1Functional : IDifferentiableFunctional
 {
     private readonly IList<IVector> _points;
     private readonly IVector _values;
+    
+    public L1Functional(IList<IVector> points, IVector values)
+    {
+        _points = points;
+        _values = values;
+    }
 
     public double Value(IDifferentialFunction function) => 
         _points

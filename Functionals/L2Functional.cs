@@ -4,10 +4,16 @@ using Interfaces.Functional;
 
 namespace Functionals;
 
-sealed class L2Functional : IDifferentiableFunctional, ILeastSquareFunctional
+public class L2Functional : IDifferentiableFunctional, ILeastSquareFunctional
 {
     private readonly IList<IVector> _points;
     private readonly IVector _values;
+
+    public L2Functional(IList<IVector> points, IVector values)
+    {
+        _points = points;
+        _values = values;
+    }
 
     public double Value(IDifferentialFunction function) => 
         _points

@@ -5,7 +5,7 @@ using Interfaces.Optimizer;
 
 namespace Optimizer;
 
-sealed class SimulatedAnnealingOptimizer : IOptimizer<IFunctional<IFunction>, IFunction>
+public class SimulatedAnnealingOptimizer : IOptimizer<IFunctional<IFunction>, IFunction>
 {
     private readonly Random _random = new Random();
 

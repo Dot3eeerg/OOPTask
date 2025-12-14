@@ -3,7 +3,7 @@ using Interfaces.Function;
 
 namespace Functions;
 
-sealed class PolynomialFunction : IParametricFunction<IFunction>
+public class PolynomialFunction : IParametricFunction<IFunction>
 {
     public IFunction Bind(IVector parameters)
     {

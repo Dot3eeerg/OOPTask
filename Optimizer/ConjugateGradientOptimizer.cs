@@ -5,7 +5,7 @@ using Interfaces.Optimizer;
 
 namespace Optimizer;
 
-sealed class ConjugateGradientOptimizer : IOptimizer<IDifferentiableFunctional, IDifferentialFunction>
+public class ConjugateGradientOptimizer : IOptimizer<IDifferentiableFunctional, IDifferentialFunction>
 {
     public int MaxIter = 10000;
     public double Alpha = 1e-3;

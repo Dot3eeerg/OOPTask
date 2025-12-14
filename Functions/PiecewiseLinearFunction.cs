@@ -4,7 +4,7 @@ using Interfaces.Function;
 
 namespace Functions;
 
-sealed class PiecewiseLinearFunction : IParametricFunction<IDifferentialFunction>
+public class PiecewiseLinearFunction : IParametricFunction<IDifferentialFunction>
 {
     public IDifferentialFunction Bind(IVector parameters)
     {
@@ -43,6 +43,10 @@ sealed class PiecewiseLinearFunction : IParametricFunction<IDifferentialFunction
             {
                 Capacity = n
             };
+            for (int j = 0; j < n; j++)
+            {
+                grad.Add(0);
+            }
 
             if (x <= 0)
             {
