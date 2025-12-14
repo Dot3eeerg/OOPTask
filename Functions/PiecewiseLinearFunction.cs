@@ -1,4 +1,3 @@
-using System.Net.Http.Headers;
 using DataObjects;
 using Interfaces.Function;
 
@@ -37,7 +36,9 @@ public class PiecewiseLinearFunction : IParametricFunction<IDifferentialFunction
 
         public IVector Gradient(IVector point)
         {
-            var x = parameters[0];
+            if (point.Count != 1)
+                throw new ArgumentException("The dimensionality of the space does not match the type of function.");
+            var x = point[0];
             var n = parameters.Count;
             var grad = new Vector
             {

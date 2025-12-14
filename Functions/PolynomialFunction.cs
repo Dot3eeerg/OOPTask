@@ -22,7 +22,7 @@ public class PolynomialFunction : IParametricFunction<IFunction>
             if (point.Count != 1)
                 throw new ArgumentException("Cannot build polynomial function, dimensions must be 1");
             
-            return parameters.Select((coeff, index) => coeff * Math.Pow(point.ElementAt(index), index)).Sum();
+            return parameters.Select((coeff, index) => coeff * Math.Pow(point[0], index)).Sum();
         }
     }
 }
